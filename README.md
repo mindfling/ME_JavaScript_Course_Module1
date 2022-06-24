@@ -7,7 +7,14 @@ https://github.com/mindfling/ME_JavaScript_Course_Module1
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/main
 
 ### link to lesson01
-https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson01
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson01/lesson01
 
 ### link to lesson02
-https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson02
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson02/lesson02
+
+### link to lesson03
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson03/lesson03
+
+### link to lesson04
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson04/lesson04
+
