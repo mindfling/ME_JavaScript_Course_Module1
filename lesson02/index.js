@@ -1,22 +1,9 @@
 'use strict'
 
 {
-  const name = 'Smart-проектор Philips';
-  const quantity = 5;
-  const category = 'видео-техника';
-  const price = 3200;
-  let money = quantity * price;
-
-  console.log(name);
-  console.log(`Общая сумма товара: ${money}`);
-}
-
-{
-  /* 
-  * Видимосто const и let только внутри блока
-  *
-  *   Создайте второй товар
-  *   Другой категории
+  /*
+  * первый товар 
+  * видимость const и let только внутри блока
   */
   const name = 'Кроссовки';
   const quantity = 12;
@@ -30,8 +17,8 @@
 
 
 {
-  /**
-   *   Создайте третий товар
+  /*
+   * второй товар
    */
   const name = 'Сноуборд';
   const quantity = 17;
