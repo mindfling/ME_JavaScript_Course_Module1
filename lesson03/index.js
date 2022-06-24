@@ -8,7 +8,7 @@
   let money = quantity * price;
 
   console.log(name);
-  console.log(`Общая сумма товара: ${money}`);
+  console.log(`Общая сумма товара: ${money} деревянных`);
 }
 
 
@@ -19,17 +19,22 @@
   const price = 2500;
 
   console.log(name);
-  console.log(`Общая сумма товара: ${quantity * price}`);
+  console.log(`Общая сумма товара: ${quantity * price} деревянных`);
 }
 
 
 {
   const name = prompt('Введите наименование товара');
-  console.log('name: ', typeof name, name);
-  const quantity =  parseInt(prompt('Введите количестова товара ' + name));
+  console.log('name: ', typeof name, name); // String
+
+  const quantity =  +prompt('Введите количестова товара ' + name); // приводим к Number
   console.log('quantity: ', typeof quantity, quantity);
+  
   const category = prompt('Введите категорюю товара ' + quantity);
-  console.log('category: ', typeof category, category);
-  const price = +prompt('Введите цену на ' + name);
+  console.log('category: ', typeof category, category); // String
+  
+  const price = parseInt(prompt('Введите цену на ' + name)); // приводим к Number через parseInt
   console.log('price: ', typeof price, price);
+
+  console.log(`На складе имеется ${quantity} единицы товара ${name} на сумму ${price * quantity} деревянных`);
 }
