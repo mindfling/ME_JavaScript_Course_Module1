@@ -14,6 +14,7 @@ const flipString = str => {
 }
 
 // тест функции
+console.log();
 console.log(flipString("Привет мир"));
 console.log(flipString("Привет Перевернутая Срока"));
 console.log(flipString("TeNet палиндром ДоВод"));
@@ -32,9 +33,26 @@ function flipStringFor(str = '') {
 }
 
 // тест функции
+console.log();
 console.log(flipStringFor("Привет мир"));
 console.log(flipStringFor("Привет Перевернутая Срока"));
 console.log(flipStringFor("TeNet палиндром ДоВод"));
 
 
+
+// * перебор элементов строки в цикле while
+function flipStringWhile(str = '') {
+  let result = '';
+  let i = str.length;
+  while (i > 0) {
+    result += str[--i];
+  }
+  return result;
+}
+
+// тест функции
+console.log();
+console.log(flipStringWhile("Привет мир"));
+console.log(flipStringWhile("Привет Перевернутая Срока"));
+console.log(flipStringWhile("TeNet палиндром ДоВод"));
 
