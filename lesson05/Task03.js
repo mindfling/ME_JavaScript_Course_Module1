@@ -13,8 +13,10 @@ const flipString = str => {
   return str.split('').reverse().join('');
 }
 
+console.log('');
+console.log('Task03');
+
 // тест функции
-console.log();
 console.log(flipString("Привет мир"));
 console.log(flipString("Привет Перевернутая Срока"));
 console.log(flipString("TeNet палиндром ДоВод"));
@@ -33,7 +35,7 @@ function flipStringFor(str = '') {
 }
 
 // тест функции
-console.log();
+console.log('');
 console.log(flipStringFor("Привет мир"));
 console.log(flipStringFor("Привет Перевернутая Срока"));
 console.log(flipStringFor("TeNet палиндром ДоВод"));
@@ -51,7 +53,7 @@ function flipStringWhile(str = '') {
 }
 
 // тест функции
-console.log();
+console.log('');
 console.log(flipStringWhile("Привет мир"));
 console.log(flipStringWhile("Привет Перевернутая Срока"));
 console.log(flipStringWhile("TeNet палиндром ДоВод"));

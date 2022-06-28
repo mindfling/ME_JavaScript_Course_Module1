@@ -15,7 +15,8 @@ const capitalize = (str) => {
 }
 
 
+console.log('');
+console.log('Task 02');
 console.log(capitalize("привет Мир"));
 console.log(capitalize("прИвЕт мИр"));
 console.log(capitalize("СТРоКа ЗаГЛаВНоЙ БуКВы..."));
-console.log(capitalize());

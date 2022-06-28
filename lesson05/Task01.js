@@ -14,7 +14,8 @@ function convertEuroToRuble(euro) {
   return ruble.toFixed(2); // сокращаем до копеек
 }
 
-
-console.log(convertEuroToRuble(1));
-console.log(convertEuroToRuble(1.5));
-console.log(convertEuroToRuble(2));
+console.log('');
+console.log('Task 01');
+console.log(1 + ' euro = ' + convertEuroToRuble(1) + 'p');
+console.log(1.5 + ' euro = ' + convertEuroToRuble(1.5) + 'p');
+console.log(2 + ' euro = ' + convertEuroToRuble(2) + 'p');
