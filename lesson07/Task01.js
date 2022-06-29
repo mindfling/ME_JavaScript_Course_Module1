@@ -1,11 +1,11 @@
 'use strict';
 
 /*
-Первая задача:
+* Первая задача:
   Напишите функцию filter()
   функция принимает в параметрах 2 массива
-  Первый массив — список всех студентов, 
-  второй — список студентов не сдавших экзамен.
+    Первый массив — список всех студентов, 
+    второй — список студентов не сдавших экзамен.
   Результат функции: массив из всех студентов, которые сдали экзамен.
 Пример:
 */
@@ -16,6 +16,7 @@ let passedSudents = [];
 
 
 const filter = (allList, failedList) => {
+  // проверка аргументов
   if ( !Array.isArray(allList) ) {
     allList = [];
   }
@@ -32,6 +33,7 @@ const filter = (allList, failedList) => {
 
   return passedList;
 }
+
 
 
 passedSudents = filter(allStudents, failedStudents);

@@ -9,11 +9,9 @@
 
 * Входящий массив :
 ?  const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
-
-Вызов функции:
+* Вызов функции:
 ?  addPrefix(names, 'Mr')
-
-Результат функции:
+* Результат функции:
 ?  ['Mr Noah', 'Mr Liam', 'Mr Mason', 'Mr Jacob', 'Mr. Robot', 'Mr William', 'Mr Ethan', 'Mr Michael', 'Mr Alexander'];
 */
 
@@ -21,29 +19,20 @@
 // функция принимает на входе массив с именами и префикс
 // возвращает массив имен с префиксами
 const addPrefix = (namesList, prefix = 'Mr.') => {
-  console.log('namesList: ', namesList);
-  console.log('prefix: ', prefix);
-  console.log('len: ', namesList.length);
 
   if (!Array.isArray(namesList)) {
     return;
   }
 
-  let resultList = [];
-  resultList = namesList.map( (item, index, arr) => {
+  return namesList.map( item => `${prefix} ${item}` );
+} 
 
-    // return prefix + ' ' + item;
-    return `${prefix} ${item}`;
-  });
-
-  return resultList;
-}
 
 // Тест
 const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+const namesRus = ['Иванчей', 'Пьеров', 'Сидоров', 'Каземцев', 'Смирнов', 'Соколов', 'Паприков'];
 
+console.log();
 console.log( 'output :', addPrefix(names), '\n\n' );
 console.log( 'output :', addPrefix(names, 'Mr'), '\n\n' );
-console.log( 'output :', addPrefix(names, 'miss'), '\n\n' );
-
-
+console.log( 'output :', addPrefix(namesRus, 'Господин'), '\n\n' );

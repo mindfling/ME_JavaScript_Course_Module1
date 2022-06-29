@@ -15,35 +15,35 @@ const getAverageValue = (arr) => {
 
   //*проворяем аргумент должен быть массив
   if (!Array.isArray(arr)) {
-    console.log('Аргумент не массив');
+    // если аргумент не массив выход из функции
     return;
   }
 
   let sum = 0; // сюда сохраняем сумму елементов
   let len = arr.length; // длина массива == количество елементов
   let average = 0; // среднее значение
- 
-/*  
-  * обычный for
-  for (let i = 0; i < len; i++) {
-    sum += arr[i];
-  }
-*/
+  
+  /*  
+    * обычный for
+    for (let i = 0; i < len; i++) {
+      sum += arr[i];
+    }
+  */
 
-/*
-  * с помощью forEach
-  arr.forEach( (item) => {
-    sum += item;
-  })
-*/
+  /*
+    * с помощью forEach
+    arr.forEach( (item) => {
+      sum += item;
+    })
+  */
 
-/*
-  * цикл for-in
-  for (const key in arr) {
-      const elem = arr[key];
-      sum += elem;
-  }
-*/
+  /*
+    * цикл for-in
+    for (const key in arr) {
+        const elem = arr[key];
+        sum += elem;
+    }
+  */
 
 
   //* цикл for-of
@@ -56,7 +56,10 @@ const getAverageValue = (arr) => {
   return Math.floor(sum / len); // округляем до целых
 }
 
+
+
 // тест
+console.log();
 console.log(getAverageValue(allСashbox));
 console.log(getAverageValue());
 console.log(getAverageValue(''));
