@@ -17,7 +17,6 @@ const getRandomInt = (min, max) => Math.floor( Math.random() * (max - min + 1) +
 const getRandomArray = (nCount = 100) => {
   let arr = [];
   for (let i = 0; i < nCount; i++) {
-    // ? arr[i] = getRandomInt(100);
     arr.push(getRandomInt(1, 100));
   }
   return arr;
