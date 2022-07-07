@@ -1,14 +1,6 @@
 'use strict';
 
 /*
-* Вторая задача:
-    Скопируйте код task01.js в task02.js
-    Продолжаем работать с предыдущей функцией
-    Функция принимает еще два параметра n и m
-    Числа m и n формируют диапазон, в пределах которого должно сгенерироваться числа для массива
-    m и n включительно
-    Учтите, что n и m могут быть отрицательными, а также может быть n > m или n < m.;
-
 * Третья задача:
 Скопируйте код task02.js в task03.js
 Добавьте 4-ый опциональный параметр у функции
@@ -17,7 +9,6 @@
     ? even -  чётных чисел
     если функция получает 'odd', то функция возвращает массив нечётных чисел
     ? odd - нечётных чисел
-
 */
 
 // * функция проверки на число
@@ -41,8 +32,8 @@ const myMax = (n, m) => (n > m) ? n : m;
 // * своя функция генерации случайных чисел от n до m
 // * c проверкой на положительные и отрицательные числа независимо от порядка
 const getRandomMinMaxInt = (n, m) => {
-  const min = myMin(n, m);
-  const max = myMax(n, m);
+  const min = (n < m) ? n : m;
+  const max = (n > m) ? n : m;
   return Math.floor( Math.random() * Math.abs(max - min + 1) + min );
 }
 
@@ -53,50 +44,72 @@ const getRandomMinMaxInt = (n, m) => {
 // min минимальная граница диапазона чисел
 // max максимальная граница чисел
 // parity - четность 'even' -> четный 'odd' -> нечетный
-const getRandomArray = (nCount = 100, min = 1, max = 100, parity) => {
-  console.log('nCount: ', nCount);
-  
-  const minNumber = myMin(min, max);
-  const maxNumber = myMax(min, max);
-  console.log('minNumber: ', minNumber);
-  console.log('maxNumber: ', maxNumber);
-
-  if (parity) {
-    parity = parity.toLowerCase();
-  }
-  console.log('parity: ', parity);
-
+const getRandomArray = (nCount = 100, min = 1, max = 100, parity = '') => {
+  const minNumb = myMin(min, max);
+  const maxNumb = myMax(min, max);
   let arr = [];
-  for (let i = 0; i < nCount; i++) {
 
-    let pushNumber = getRandomMinMaxInt(minNumber, maxNumber); // генерируем число
+  /*
+    if (parity) {
+      parity = parity.toLowerCase();
+    }
+    for (let i = 0; i < nCount; i++) {
+      let pushNumber = getRandomMinMaxInt(minNumb, maxNumb); // генерируем число
+      if (parity === 'even') {
+        // * even - если нам нужны четные числа
+        if (isEvenNumber(pushNumber)) {
+          arr.push(pushNumber); //если четные even - добавляем
+        } else {
+          i--;      // счетчик на один цикл назад
+          continue; // возвращаемся назад на цикл
+        }
+        
+      } else if (parity === 'odd') {
+        // * odd - если нам нужны НЕчетные НеПарные числа
+        if (isOddNumber(pushNumber)) {
+          arr.push(pushNumber); // добавляем в массив если нечетные
+        } else {
+          i--;
+          continue;
+        }
 
-    if (parity === 'even') {
-      // * even - если нам нужны четные числа
-
-      if (isEvenNumber(pushNumber)) {
-        arr.push(pushNumber); //если четные even - добавляем
       } else {
-        i--;      // счетчик на один цикл назад
-        continue; // возвращаемся назад на цикл
+        // * в противном случае нам нужны как четные так и нечетыне числа
+        arr.push(pushNumber);
       }
-      
-    } else if (parity === 'odd') {
-      // * odd - если нам нужны НЕчетные НеПарные числа
+    }
+  */
 
+  if (parity.toLowerCase() === 'even') {
+    // * even чётный
+    for (let i = 0; i < nCount; i++) {
+      let pushNumber = getRandomMinMaxInt(minNumb, maxNumb);
+      if (isEvenNumber(pushNumber)) {
+        arr.push(pushNumber); // добаляем четные 
+      } else {
+        i--; // в противном случае проходим эту итерацию еще раз
+        continue;
+      }
+    }
+
+  } else if (parity.toLowerCase() === 'odd') {
+    // * odd отбираем только нечетные числа
+    for (let i = 0; i < nCount; i++) {
+      let pushNumber = getRandomMinMaxInt(minNumb, maxNumb);
       if (isOddNumber(pushNumber)) {
-        arr.push(pushNumber); // добавляем в массив если нечетные
+        arr.push(pushNumber); // добавляем нечетные
       } else {
         i--;
         continue;
       }
-
-    } else {
-      // * в противном случае нам нужны как четные так и нечетыне числа
-
+    }
+    
+  } else {
+    // * по умолчанию и четные и нечетные
+    for (let i = 0; i < nCount; i++) {
+      let pushNumber = getRandomMinMaxInt(minNumb, maxNumb);
       arr.push(pushNumber);
     }
-
   }
 
   return arr;
