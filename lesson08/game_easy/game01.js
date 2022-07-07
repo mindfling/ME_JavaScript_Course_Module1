@@ -3,25 +3,17 @@
 
 const getRandomInt = (min, max) => Math.floor( Math.random() * (max - min + 1) + min );
 
-const isNumber = (n) => {
-  return !isNaN(n) && isFinite(n);
-}
+const isNumber = (n) => !isNaN(n) && isFinite(n);
 
-// let start = confirm('Запустить игру?');
-// console.log('start: ', start);
 
-// let start;
 // * начало игрового цикла
 do {
-  // console.log('start: ', start);
 
   const botNumber = getRandomInt(1, 100);
-  console.log('Бот загадал число botNumber: ', botNumber);
+  console.log('Бот загадал число: ', botNumber);
 
   let userNumber;
   while ( (userNumber = prompt('Угадайте целое число от 1 до 100')) && (userNumber != botNumber) ) {
-    // userNumber = prompt('Угадайте целое число от ');
-    console.log('userNumber: ', userNumber);
 
     if (isNumber(userNumber)) {
       console.log('Вы ввели число', userNumber);
@@ -45,7 +37,6 @@ do {
   
   console.log('Правильно! Угадал! Конец игры');
   alert('Правильно! Угадал! Конец игры');
-  console.log('botNumber: ', botNumber, 'userNumber: ', userNumber);
 
 } while (confirm('Продолжить игру?'));
 
