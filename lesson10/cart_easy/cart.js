@@ -1,8 +1,8 @@
 'use strict';
 
 
-// * формируем объект корзины покупок cart
 
+// * формируем объект корзины покупок cart
 const cart = {
 
   // * свойства
@@ -12,11 +12,10 @@ const cart = {
 
 
   // *** методы ***
-
   //    - получить общую стоимость товаров - метод возвращает значение свойства //? _totalPrice
   get totalPrice() {
     console.log('getter for totalPrice');
-    return this._totalPrice;
+    return this.calculateItemPrice();
   },
 
   // ? ВОПРОС почему этот метод не геттер ?
@@ -31,7 +30,7 @@ const cart = {
   *  цену товара      //?   productPrice
   *  количество товара (опциональный параметр, по умолчанию 1 товар) //?   productAmount
    этот метод формирует объект из полученных параметров и добавляет его в свойство items
-   также вызывает все необходимые методы чтобы свойства count и totalPrice были актуальные
+   также вызывает все необходимые методы чтобы свойства count и _totalPrice были актуальные
   */
   add( productName, productPrice, productAmount = 1 ) {
     const product = {
@@ -52,19 +51,15 @@ const cart = {
   },
 
 
-  // посчитать общую стоимость всех товаров items[] 
   // пересчитывает стоимость всей корзины и записывает значение в //? _totalPrice 
   calculateItemPrice() {
-    // let count = 0;
     // вычисляем сумму
     let total = this.items.reduce( (sum, curItem) => {
-      // count++;
-      // console.log(`  ${curItem.name}:  ${curItem.price}р * ${curItem.amount}шт`);
       return sum + curItem.price * curItem.amount;
     }, 0);
     this._totalPrice = total; // сохраняем
 
-    return this.totalPrice;
+    return total;
   },
 
 
