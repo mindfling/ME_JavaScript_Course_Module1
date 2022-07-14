@@ -33,3 +33,6 @@ https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson08
 9. link to lesson09
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson09
 
+10. link to lesson10
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson10
+
