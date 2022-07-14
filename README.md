@@ -18,6 +18,24 @@ https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson03
 4. link to lesson04
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson04
 
-5. link to lesson04
+5. link to lesson05
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson05
+
+6. link to lesson06
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson06
+
+7. link to lesson07
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson07
+
+8. link to lesson08
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson08
+
+9. link to lesson09
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson09
+
+10. link to lesson10
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson10
+
+11. link to lesson11
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson11
 
