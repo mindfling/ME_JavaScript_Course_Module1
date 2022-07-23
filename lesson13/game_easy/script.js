@@ -3,6 +3,6 @@
 console.log('Lets start the game');
 
 // const myGame = window.gameRockPaperScissors();
-const myGame = window.PRS();
+const myGame = window.RPS;
 
 myGame();
