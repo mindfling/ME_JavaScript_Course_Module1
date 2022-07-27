@@ -104,7 +104,7 @@
             return start();
           } else {
             console.log('пользователь выиграл, камень потупил ножницы');
-            result.player++;
+            result.playerWin();
             return start();
           }
         }
