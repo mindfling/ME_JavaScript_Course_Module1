@@ -44,4 +44,7 @@ https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson12
 
 13. link to lesson13
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson13
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson13/lesson13/game_easy
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson13/lesson13/game_hard1
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson13/lesson13/game_hard2
 
