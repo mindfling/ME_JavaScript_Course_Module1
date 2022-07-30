@@ -1,4 +1,4 @@
 'use strict';
 
-const myGame = window.RPS;
+const myGame = window.gameRPS;
 myGame();

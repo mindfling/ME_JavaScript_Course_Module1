@@ -5,6 +5,9 @@
   const FIGURE_SET = ['Камень', 'Ножницы', 'Бумага']; // RUS
   // const FIGURE_SET = ['Rock', 'Scissors', 'Paper']; // ENG
   // const FIGURE_SET = ['к', 'н', 'б']; // short
+  // * 0 -> 'к'
+  // * 1 -> 'н'
+  // * 2 -> 'б'
 
   const consoleAlert = (s) => {
     console.log(s);
@@ -52,22 +55,25 @@
 
     const start = () => {
       // спрашиваем бота
-      const botAnswer = getBotAnswer(figures).charAt(0).toLowerCase();
+      const botAnswer = getBotAnswer(figures).charAt(0).toLowerCase(); // к н б
 
       // спрашиваем пользователя
+      // к н б null ...
       let userAnswer = prompt('Выбирайте: ' + FIGURE_SET.join(', или ') + ' ?');
 
-      console.log('bot', botAnswer, '\nplayer', userAnswer);
+      console.log('bot:', botAnswer,
+        '\nplayer:', userAnswer);
 
-      // если пользователь нажал Отмена или ввел пустую строку
-      if (userAnswer === null || userAnswer === '') {
+      // если пользователь нажал Отмена
+      if (userAnswer === null) {
         // переспрашиваем
         if (confirm('Вы точно хотите выйти?')) {
           console.log('КОНЕЦ ИГРЫ');
-          consoleAlert(`
-  КОМПЬЮТЕР:\t ${result.computer} 
-  ИГРОК:\t ${result.player}`,
-          );
+          result.info();
+          //         consoleAlert(`
+          // КОМПЬЮТЕР:\t ${result.computer}
+          // ИГРОК:\t ${result.player}`,
+          //         );
           return null; // выход из игры
         } else {
           return start();
@@ -82,42 +88,40 @@
           return start();
         }
 
-        // * бот загадал Камень
-        if (botAnswer === figures[0].charAt().toLowerCase()) {
-          console.log('figures[0]: ', figures[0]);
-          if (userAnswer === figures[1].charAt().toLowerCase()) {
-            console.log('figures[1]: ', figures[1]);
-            consoleAlert('камень тупит ножницы, бот выиграл');
-            result.computerWin(); // computer++;
+        if (userAnswer === figures[0].charAt().toLowerCase()) { // к
+          // * пользователь загадал Камень
+          if (botAnswer === figures[1].charAt().toLowerCase()) { // н
+            // камень тупит ножницы, игрок выиграл
+            result.playerWin(); // player++; // * к -> н
           } else {
-            consoleAlert('пользователь выиграл, бумага накрыла камень');
-            result.playerWin(); // player++;
+            // бот выиграл, бумага накрыла камень
+            result.computerWin(); // computer++; // * к <- б
           }
-          return start();
-        }
-
-        // * бот загадал Ножницы
-        if (botAnswer === figures[1].charAt().toLowerCase()) {
-          if (userAnswer === figures[2].charAt().toLowerCase()) {
-            console.log('ножницы режут бумагу, бот выиграл');
-            result.computerWin();
+          //
+        } else if (userAnswer === figures[1].charAt().toLowerCase()) { // н
+          // * пользователь загадал Ножницы
+          if (botAnswer === figures[2].charAt().toLowerCase()) { // б
+            // ножницы режут бумагу, бот выиграл
+            result.playerWin(); // player // * н -> б
           } else {
-            console.log('пользователь выиграл, камень потупил ножницы');
-            result.playerWin();
+            // пользователь выиграл, камень потупил ножницы
+            result.computerWin(); // bot // * н <- к
           }
-          return start();
-        }
-
-        // * бот загадал Бумага
-        if (botAnswer === figures[2].charAt().toLowerCase()) {
-          if (userAnswer === figures[0].charAt().toLowerCase()) {
-            console.log('бумага накрыла камень и бот выиграл');
-            result.computerWin();
+          //
+        } else if (userAnswer === figures[2].charAt().toLowerCase()) { // б
+          // * пользователь загадал Бумага
+          if (botAnswer === figures[0].charAt().toLowerCase()) { // к
+            // бумага накрыла камень и бот выиграл
+            result.playerWin(); // player // * б -> к
           } else {
-            console.log('пользователь выиграл, ножницы разрезали бумагу');
-            result.playerWin();
+            // пользователь выиграл, ножницы разрезали бумагу
+            result.computerWin(); // bot // * б <- н
           }
-          return start();
+          //
+        } else {
+          // пользователь ввел что-то другое
+          // consoleAlert('Некоректный ввод');
+          console.log('Некоректный ввод');
         }
 
         return start();
@@ -125,11 +129,9 @@
     };
 
 
-    // **********
     return start;
   }; // game возращает ссылку на start
 
   // * сохраняем ссылку в глобальном объекте
-  window.RPS = game();
+  window.gameRPS = game();
 })();
-
