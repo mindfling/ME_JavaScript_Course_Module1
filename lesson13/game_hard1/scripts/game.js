@@ -2,8 +2,8 @@
 
 
 (() => {
-  const FIGURE_SET = ['Камень', 'Ножницы', 'Бумага']; // RUS
-  // const FIGURE_SET = ['Rock', 'Scissors', 'Paper']; // ENG
+  const FIGURE_RUS_SET = ['Камень', 'Ножницы', 'Бумага']; // RUS
+  const FIGURE_ENG_SET = ['Rock', 'Scissors', 'Paper']; // ENG
   // const FIGURE_SET = ['к', 'н', 'б']; // short
   // * 0 -> 'к'
   // * 1 -> 'н'
@@ -30,8 +30,15 @@
     return;
   };
 
-  const game = () => {
-    const figures = FIGURE_SET;
+  const game = (lang = 'EN') => {
+    // ГЛАВНАЯ ФУНКЦИЯ ЗАПУСКА ИГРЫ
+
+    let figures = [];
+    if (lang.toUpperCase() === 'RU' || lang.toUpperCase() === 'RUS') {
+      figures = FIGURE_RUS_SET;
+    } else {
+      figures = FIGURE_ENG_SET;
+    }
 
     // текущие результаты игры
     const result = {
@@ -53,13 +60,14 @@
       },
     };
 
-    const start = () => {
+    // eslint-disable-next-line require-jsdoc
+    function start() {
       // спрашиваем бота
       const botAnswer = getBotAnswer(figures).charAt(0).toLowerCase(); // к н б
 
       // спрашиваем пользователя
       // к н б null ...
-      let userAnswer = prompt('Выбирайте: ' + FIGURE_SET.join(', или ') + ' ?');
+      let userAnswer = prompt('Выбирайте: ' + figures.join(', или ') + ' ?');
 
       console.log('bot:', botAnswer,
         '\nplayer:', userAnswer);
@@ -126,12 +134,12 @@
 
         return start();
       }
-    };
+    }
 
 
     return start;
   }; // game возращает ссылку на start
 
   // * сохраняем ссылку в глобальном объекте
-  window.gameRPS = game();
+  window.gameRPS = game;
 })();
