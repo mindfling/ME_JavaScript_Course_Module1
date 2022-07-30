@@ -51,3 +51,4 @@ https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/lesson13/lesson13
 - link to course work 01
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/coursework01
 https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/coursework01/coursework01
+https://github.com/mindfling/ME_JavaScript_Course_Module1/tree/cousework01/coursework01
