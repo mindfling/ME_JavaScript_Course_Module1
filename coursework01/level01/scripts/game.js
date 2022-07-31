@@ -17,11 +17,11 @@ window.marbleGame = (() => {
     const marbles = {
       bot: 5,
       user: 5,
-      info: () => {
-        console.log('количество marbles:');
-        console.log('bot: ', this.bot);
-        console.log('user: ', this.user);
-      }
+      info() {
+        console.log('\nколичество marbles:',
+          '\nbot: ', this.bot,
+          '\nuser: ', this.user);
+      },
     };
 
     let botAns;
@@ -37,19 +37,21 @@ window.marbleGame = (() => {
       console.log('бот загадал botAns: ', botAns);
 
       // ask user
-      // userAns = +prompt('Какое количество marbles вы ставите от 1 до ' + marbles.user);
+      // userAns = +prompt('Какое количество marbles вы ставите от 1 до '
+      //                    + marbles.user);
       userAns = +prompt('Какое количество marbles вы угадываете у бота');
       console.log('пользоваетель отгадывает userAns: ', userAns);
 
       if (botAns === userAns) {
         console.log('Пользователь УГАДАЛ');
         return;
-      } if (isNaN(userAns) || userAns == 0) {
-        console.log('Выход');
+      } if (isNaN(userAns) || userAns == 0 || userAns === '') {
+        console.log('Пользователь Выход');
       } else {
         return start();
       }
 
+      marbles.info();
       console.log('Конец игры');
     }; // game возращает ссылку на start
   }
